@@ -13,6 +13,19 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 
 function arrayConverter(array) {
   // Your code here
+  let obj = {};
+  array.forEach((key) => {
+    if (obj[key] === undefined) {
+        let occurences = 0;
+        array.forEach((element, i) => {
+        if (element === key) {
+          occurences++;
+        }
+      });
+      obj[key] = occurences;
+    }
+    });
+  return obj;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
